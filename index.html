@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="sidebar-left">
+        <div class="sidebar-left-logo">ЛОГО</div>
+
+        <button class="sidebar-left-icon" id="managers-btn"> <img class="users-img" src="img/users.png" alt="">
+            Товары</button>
+        <button class="sidebar-left-icon" id="regions-btn"> <img class="location-img" src="img/location.png"
+                alt="">Заказы</button>
+        <button class="sidebar-left-icon" id="new-section-btn">
+            <img class="Layout-section-img" src="img/Layout-Icon-3.png" alt="">
+            Категории
+        </button>
+    </div>
+
+    <div id="new-section" class="page-left">
+        <h1>Hello World</h1>
+    </div>
+
+
+
+    <div class="content-left">
+        <div id="managers" class="page-left active">
+            <div class="head-right-page">
+                <button class="head-right-exit-btn">
+                    <p class="head-right-exit-text">Выход</p>
+                    <img class="head-right-exit-logo" src="img/exit.png" alt="">
+                </button>
+            </div>
+            <div class="right-page-block">
+                <h1 class="right-page-title">Текст</h1>
+                <div class="right-page-head">
+                    <div class="right-search-block">
+                        <p class="right-search-text">Название товара</p>
+                        <img class="right-search-img" src="img/search.png" alt="">
+                    </div>
+                    <button class="right-filter-btn"><img class="right-filter-img" src="img/filter.png"
+                            alt="">Фильтр</button>
+                    <button id="addManagerBtn" class="right-manager-btn">Добавить товар</button>
+                </div>
+
+
+
+
+
+
+                <div id="add-product" class="page-left">
+                    <h1>Добавление товара</h1>
+                    <form>
+                        <!-- Загрузите или перетащите фото -->
+                        <div>
+                            <label for="product-image">Загрузите или перетащите фото</label>
+                            <input type="file" id="product-image" name="product-image">
+                        </div>
+                
+                        <!-- Название товара -->
+                        <div>
+                            <label for="product-name">Название товара</label>
+                            <input type="text" id="product-name" name="product-name" placeholder="Введите название товара">
+                        </div>
+                
+                        <!-- Категория -->
+                        <div>
+                            <label for="category">Категория</label>
+                            <select id="category" name="category">
+                                <option value="">Выберите категорию</option>
+                                <!-- Добавить категории -->
+                            </select>
+                        </div>
+                
+                        <!-- Подкатегория -->
+                        <div>
+                            <label for="subcategory">Подкатегория</label>
+                            <select id="subcategory" name="subcategory">
+                                <option value="">Выберите подкатегорию</option>
+                                <!-- Добавить подкатегории -->
+                            </select>
+                        </div>
+                
+                        <!-- Цена и Количество -->
+                        <div>
+                            <label for="price">Цена</label>
+                            <input type="text" id="price" name="price" placeholder="Укажите цену">
+                
+                            <label for="quantity">Количество</label>
+                            <input type="text" id="quantity" name="quantity" placeholder="Укажите количество">
+                        </div>
+                
+                        <!-- Дата выпуска и Скидка -->
+                        <div>
+                            <label for="release-date">Дата выпуска</label>
+                            <input type="date" id="release-date" name="release-date">
+                
+                            <label for="discount">Скидка в %</label>
+                            <input type="text" id="discount" name="discount" placeholder="Укажите скидку в %">
+                        </div>
+                
+                        <!-- Описание -->
+                        <div>
+                            <label for="description">Описание</label>
+                            <textarea id="description" name="description" placeholder="Введите описание о товаре"></textarea>
+                        </div>
+                
+                        <!-- Кнопки -->
+                        <div>
+                            <button type="button" onclick="cancelAddProduct()">Отменить</button>
+                            <button type="submit">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+                
+
+
+
+
+
+
+
+
+
+                <div class="active-hidden-block">
+                    <p class="active-text">АКТИВНЫЕ (45 556)</p>
+                    <p class="hidden-text">СКРЫТЫЕ (75)</p>
+                </div>
+                <div class="active-hidden-lines">
+                    <hr class="active-text-line">
+                    <hr class="hidden-text-line">
+                </div>
+                <div class="markAll-block">
+                    <button class="markAll-btn">
+                        <input class="markAll-click" type="checkbox">
+                        <p class="markAll-text">Отметить все</p>
+                    </button>
+                    <button class="markAll-delete-block">
+                        <img class="markAll-delete-img" src="img/delete.png" alt="">
+                    </button>
+                    <button class="markAll-eye-block">
+                        <img class="markAll-eye-img" src="img/eyes.png" alt="">
+                    </button>
+                    <button class="markAll-btn">
+                        <img class="markAll-add-new-img" src="img/add-bird.png" alt="">
+                        <p class="markAll-text mark-add-new">Добавить новинки</p>
+                    </button>
+                    <button class="markAll-btn">
+                        <img class="markAll-add-new-img" src="img/add-bird.png" alt="">
+                        <p class="markAll-text">Добавить в сезонные товары</p>
+                    </button>
+                    <button class="markAll-btn">
+                        <img class="markAll-add-new-img" src="img/add-catagery-img.png" alt="">
+                        <p class="markAll-text">Добавить в категорию</p>
+                    </button>
+                    <button class="markAll-btn">
+                        <img class="markAll-add-new-img" src="img/procent-img.png" alt="">
+                        <p class="markAll-text">Скидка</p>
+                    </button>
+                </div>
+
+
+
+
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th class="lists-head bros">№</th>
+                            <th class="lists-head">ФОТО</th>
+                            <th class="lists-head">ТОВАР</th>
+                            <th class="lists-head">КАТЕГОРИЯ</th>
+                            <th class="lists-head">КОЛИЧЕСТВО</th>
+                            <th class="lists-head">ЦЕНА</th>
+                            <th class="lists-head">СКИДКА</th>
+                            <th class="lists-head">СЕЗОН.ТОВАР</th>
+                            <th class="lists-head">НОВИНКА</th>
+                            <th class="lists-head">ДЕЙСТВИЯ</th>
+                        </tr>
+                    </thead>
+                </table>
+
+
+
+
+
+
+                <hr class="header-list-line">
+
+
+                <ol class="lists-block">
+                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> Капуста
+                            белокочанна...
+                            <div class="list-name-date">02.06.24</div>
+                        </div>
+                    </li>
+                    <div class="list-category">Овощи</div>
+                    <div class="list-total">1500шт</div>
+                    <div class="list-prices-block">
+                        <div class="list-old-price">1 200 c</div>
+                        <div class="list-price">1 499 c</div>
+                    </div>
+                    <div class="list-discount">5%</div>
+                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+
+                <ol class="lists-block">
+                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> Капуста
+                            белокочанна...
+                            <div class="list-name-date">02.06.24</div>
+                        </div>
+                    </li>
+                    <div class="list-category">Овощи</div>
+                    <div class="list-total">1500шт</div>
+                    <div class="list-prices-block">
+                        <div class="list-old-price">1 200 c</div>
+                        <div class="list-price">1 499 c</div>
+                    </div>
+                    <div class="list-discount">5%</div>
+                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+
+                <ol class="lists-block">
+                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> Капуста
+                            белокочанна...
+                            <div class="list-name-date">02.06.24</div>
+                        </div>
+                    </li>
+                    <div class="list-category">Овощи</div>
+                    <div class="list-total">1500шт</div>
+                    <div class="list-prices-block">
+                        <div class="list-old-price">1 200 c</div>
+                        <div class="list-price">1 499 c</div>
+                    </div>
+                    <div class="list-discount">5%</div>
+                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+
+                <div class="footer-pages-blocks">
+                    <div class="open-page-block">
+                        <p class="open-page-text">Перейти на страницу</p>
+                        <div class="open-page-minblock">0</div>
+                    </div>
+                    <div class="pages-blocks">
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer.png"
+                                alt=""></button>
+                        <button class="page-block">1</button>
+                        <button class="page-block">2</button>
+                        <button class="page-block">3</button>
+                        <button class="page-block">4</button>
+                        <button class="page-block">5</button>
+                        <button class="page-block">...</button>
+                        <button class="page-block">234</button>
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer-2.png"
+                                alt=""></button>
+                    </div>
+                    <div class="footer-show-block">
+                        <p class="show-text">Показать</p>
+                        <input type="number" min="0" max="34">
+                        <p class="show-number">из 34</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="regions" class="page-left">
+            <div class="head-right-page">
+                <button class="head-right-exit-btn">
+                    <p class="head-right-exit-text">Выход</p>
+                    <img class="head-right-exit-logo" src="img/exit.png" alt="">
+                </button>
+            </div>
+            <div class="right-page-block">
+                <h1 class="right-page-title">Текст</h1>
+                <div class="right-page-head">
+                    <div class="right-search-block">
+                        <p class="right-search-text">Поиск</p>
+                        <img class="right-search-img" src="img/search.png" alt="">
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="active-hidden-block">
+                    <p class="active-text">АКТИВНЫЕ (45 556)</p>
+                    <p class="hidden-text">СКРЫТЫЕ (75)</p>
+                </div>
+                <div class="active-hidden-lines">
+                    <hr class="active-text-line">
+                    <hr class="hidden-text-line">
+                </div>
+                <div class="markAll-block">
+                    <button class="markAll-btn">
+                        <input class="markAll-click" type="checkbox">
+                        <p class="markAll-text">Отметить все</p>
+                    </button>
+                    <button class="markAll-delete-block">
+                        <img class="markAll-delete-img" src="img/delete.png" alt="">
+                    </button>
+                    <button class="markAll-eye-block">
+                        <img class="markAll-eye-img" src="img/eyes.png" alt="">
+                    </button>
+                </div>
+
+                <div class="header-lists-block">
+                    <div class="head-number-icon">№</div>
+                    <div class="head-list-text-block">
+                        <h1 class="head-list-text">РЕГИОН</h1>
+                        <h1 class="head-list-text">ДЕЙСТВИЯ</h1>
+                    </div>
+                </div>
+                <hr class="header-list-line">
+
+
+                <ol class="lists-block">
+                    <li class="list-name">г.Бишкек</li>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+                <ol class="lists-block">
+                    <li class="list-name">г.Бишкек</li>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+                <ol class="lists-block">
+                    <li class="list-name">г.Бишкек</li>
+                    <div class="list-imgs">
+                        <button id="addManagerBtn--3"> <img class="list-img" src="img/System icons.png" alt=""></button>
+                        <button> <img class="list-img" src="img/Real World Icon.png" alt=""></button>
+                        <button> <img class="list-img" src="img/Frame.png" alt=""></button>
+                    </div>
+                </ol>
+
+                <div class="footer-pages-blocks">
+                    <div class="open-page-block">
+                        <p class="open-page-text">Перейти на страницу</p>
+                        <div class="open-page-minblock">0</div>
+                    </div>
+                    <div class="pages-blocks">
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer.png"
+                                alt=""></button>
+                        <button class="page-block">1</button>
+                        <button class="page-block">2</button>
+                        <button class="page-block">3</button>
+                        <button class="page-block">4</button>
+                        <button class="page-block">5</button>
+                        <button class="page-block">...</button>
+                        <button class="page-block">234</button>
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer-2.png"
+                                alt=""></button>
+                    </div>
+                    <div class="footer-show-block">
+                        <p class="show-text">Показать</p>
+                        <input type="number" min="0" max="34">
+                        <p class="show-number">из 34</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script src="registration.js"></script>
+</body>
+
+</html>
