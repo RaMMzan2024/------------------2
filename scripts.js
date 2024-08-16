@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = discountModal.querySelector('.button-cancel');
 
     // Убедимся, что окно скрыто при загрузке страницы
-    discountModal.style.display = 'none';
+    // discountModal.style.display = 'none';
 
     discountBtn.addEventListener('click', function() {
         discountModal.style.display = 'flex';
