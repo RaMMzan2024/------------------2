@@ -108,17 +108,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const discountBtn = document.querySelector('.discount-btn'); // Кнопка "Скидка"
+    const discountBtn = document.getElementById('discount-btn'); // Используем ID кнопки "Скидка"
     const discountModal = document.getElementById('discount-modal');
     const closeBtn = discountModal.querySelector('.button-cancel');
 
     // Убедимся, что окно скрыто при загрузке страницы
-    // discountModal.style.display = 'none';
+    discountModal.style.display = 'none';
 
+    // Обработчик клика для открытия модального окна
     discountBtn.addEventListener('click', function() {
         discountModal.style.display = 'flex';
     });
 
+    // Обработчик клика для закрытия модального окна
     closeBtn.addEventListener('click', function() {
         discountModal.style.display = 'none';
     });
@@ -135,3 +137,67 @@ function closeDiscountModal() {
     document.getElementById('discount-modal').style.display = 'none';
 }
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addCategoryBtn = document.querySelector('.markAll-btn:nth-child(6)'); // Кнопка "Добавить в категорию"
+    const categoryModal = document.getElementById('category-modal');
+    const closeCategoryBtn = categoryModal.querySelector('.close-category-btn');
+
+    // Показать модальное окно
+    addCategoryBtn.addEventListener('click', function() {
+        categoryModal.style.display = 'flex';
+    });
+
+    // Закрыть модальное окно при нажатии на крестик
+    closeCategoryBtn.addEventListener('click', function() {
+        categoryModal.style.display = 'none';
+    });
+
+    // Закрыть модальное окно при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target === categoryModal) {
+            categoryModal.style.display = 'none';
+        }
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const createCategoryButton = document.getElementById('create-category-button');
+
+    createCategoryButton.addEventListener('click', function() {
+        // Логика для создания новой категории
+        alert("Создание новой категории");
+    });
+
+    // Логика для редактирования, просмотра, удаления категории
+    document.querySelectorAll('.button-edit-category').forEach(button => {
+        button.addEventListener('click', function() {
+            alert("Редактирование категории");
+        });
+    });
+
+    document.querySelectorAll('.button-view-category').forEach(button => {
+        button.addEventListener('click', function() {
+            alert("Просмотр категории");
+        });
+    });
+
+    document.querySelectorAll('.button-delete-category').forEach(button => {
+        button.addEventListener('click', function() {
+            alert("Удаление категории");
+        });
+    });
+
+    // Логика переключения на страницу "Категории"
+    const categorySectionButton = document.getElementById('new-section-btn');
+    categorySectionButton.addEventListener('click', function() {
+        document.querySelectorAll('.page-section').forEach(page => page.classList.remove('active'));
+        document.getElementById('categories-page').classList.add('active');
+    });
+});

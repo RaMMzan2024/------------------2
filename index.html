@@ -12,10 +12,14 @@
     <div class="sidebar-left">
         <div class="sidebar-left-logo">ЛОГО</div>
 
-        <button class="sidebar-left-icon" id="managers-btn"> <img class="users-img" src="img/users.png" alt="">
-            Товары</button>
-        <button class="sidebar-left-icon" id="regions-btn"> <img class="location-img" src="img/location.png"
-                alt="">Заказы</button>
+        <button class="sidebar-left-icon" id="managers-btn"> 
+            <img class="users-img" src="img/users.png" alt="">
+            Товары
+        </button>
+        <button class="sidebar-left-icon" id="regions-btn"> 
+            <img class="location-img" src="img/location.png" alt="">
+            Заказы
+        </button>
         <button class="sidebar-left-icon" id="new-section-btn">
             <img class="Layout-section-img" src="img/Layout-Icon-3.png" alt="">
             Категории
@@ -38,13 +42,9 @@
                         <p class="right-search-text">Название товара</p>
                         <img class="right-search-img" src="img/search.png" alt="">
                     </div>
-                    <button class="right-filter-btn"><img class="right-filter-img" src="img/filter.png"
-                            alt="">Фильтр</button>
+                    <button class="right-filter-btn"><img class="right-filter-img" src="img/filter.png" alt="">Фильтр</button>
                     <button id="addManagerBtn" class="right-manager-btn">Добавить товар</button>
                 </div>
-
-
-
 
                 <!-- Боковое окно фильтра -->
                 <div id="filter-sidebar" class="filter-sidebar">
@@ -61,39 +61,6 @@
                         <li>По уменьшению цены</li>
                     </ul>
                 </div>
-
-
-
-
-
-<!-- Модальное окно "Создать скидку" -->
-<div id="discount-modal" class="modal-window">
-    <div class="modal-box">
-        <h2 class="modal-title">Создать скидку</h2>
-        <form>
-            <div class="form-item">
-                <label for="discount-size" class="input-label">Размер скидки</label>
-                <input type="text" id="discount-size" name="discount-size" class="input-field" placeholder="0%">
-            </div>
-            <div class="form-item form-item-half">
-                <label for="start-date" class="input-label">Дата начала</label>
-                <input type="date" id="start-date" name="start-date" class="input-field">
-            </div>
-            <div class="form-item form-item-half">
-                <label for="end-date" class="input-label">Дата окончания</label>
-                <input type="date" id="end-date" name="end-date" class="input-field">
-            </div>
-            <div class="form-actions">
-                <button type="button" class="button-cancel" onclick="closeDiscountModal()">Отменить</button>
-                <button type="submit" class="button-save">Создать</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-
-
-
 
                 <!-- Остальной контент страницы "Товары" -->
 
@@ -118,7 +85,7 @@
                     </button>
                     <button class="markAll-btn">
                         <img class="markAll-add-new-img" src="img/add-bird.png" alt="">
-                        <p class="markAll-text mark-add-new">Добавить новинки</p>
+                        <p class="markAll-text">Добавить в новинки</p>
                     </button>
                     <button class="markAll-btn">
                         <img class="markAll-add-new-img" src="img/add-bird.png" alt="">
@@ -128,7 +95,7 @@
                         <img class="markAll-add-new-img" src="img/add-catagery-img.png" alt="">
                         <p class="markAll-text">Добавить в категорию</p>
                     </button>
-                    <button class="markAll-btn">
+                    <button class="markAll-btn" id="discount-btn">
                         <img class="markAll-add-new-img" src="img/procent-img.png" alt="">
                         <p class="markAll-text">Скидка</p>
                     </button>
@@ -153,10 +120,12 @@
 
                 <hr class="header-list-line">
 
+                <!-- Пример товаров -->
                 <ol class="lists-block">
-                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
-                        <div class="list-need-flex"> Капуста
-                            белокочанна...
+                    <li class="list-name"> 
+                        <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> 
+                            Капуста белокочанна...
                             <div class="list-name-date">02.06.24</div>
                         </div>
                     </li>
@@ -167,18 +136,27 @@
                         <div class="list-price">1 499 c</div>
                     </div>
                     <div class="list-discount">5%</div>
-                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-season">
+                        <img class="list-birdie-img" src="img/list-birdie.png" alt="">
+                    </div>
                     <div class="list-imgs">
-                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
-                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
-                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                        <button id="edit-product">
+                            <img class="list-img" src="img/System icons.png" alt="">
+                        </button>
+                        <button id="view-product">
+                            <img class="list-img" src="img/Real World Icon.png" alt="">
+                        </button>
+                        <button id="delete-product">
+                            <img class="list-img" src="img/Frame.png" alt="">
+                        </button>
                     </div>
                 </ol>
 
                 <ol class="lists-block">
-                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
-                        <div class="list-need-flex"> Капуста
-                            белокочанна...
+                    <li class="list-name"> 
+                        <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> 
+                            Капуста белокочанна...
                             <div class="list-name-date">02.06.24</div>
                         </div>
                     </li>
@@ -189,18 +167,27 @@
                         <div class="list-price">1 499 c</div>
                     </div>
                     <div class="list-discount">5%</div>
-                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-season">
+                        <img class="list-birdie-img" src="img/list-birdie.png" alt="">
+                    </div>
                     <div class="list-imgs">
-                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
-                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
-                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                        <button id="edit-product">
+                            <img class="list-img" src="img/System icons.png" alt="">
+                        </button>
+                        <button id="view-product">
+                            <img class="list-img" src="img/Real World Icon.png" alt="">
+                        </button>
+                        <button id="delete-product">
+                            <img class="list-img" src="img/Frame.png" alt="">
+                        </button>
                     </div>
                 </ol>
 
                 <ol class="lists-block">
-                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
-                        <div class="list-need-flex"> Капуста
-                            белокочанна...
+                    <li class="list-name"> 
+                        <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> 
+                            Капуста белокочанна...
                             <div class="list-name-date">02.06.24</div>
                         </div>
                     </li>
@@ -211,18 +198,27 @@
                         <div class="list-price">1 499 c</div>
                     </div>
                     <div class="list-discount">5%</div>
-                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-season">
+                        <img class="list-birdie-img" src="img/list-birdie.png" alt="">
+                    </div>
                     <div class="list-imgs">
-                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
-                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
-                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                        <button id="edit-product">
+                            <img class="list-img" src="img/System icons.png" alt="">
+                        </button>
+                        <button id="view-product">
+                            <img class="list-img" src="img/Real World Icon.png" alt="">
+                        </button>
+                        <button id="delete-product">
+                            <img class="list-img" src="img/Frame.png" alt="">
+                        </button>
                     </div>
                 </ol>
 
                 <ol class="lists-block">
-                    <li class="list-name"> <img class="list-big-img" src="img/list-big-img.png" alt="">
-                        <div class="list-need-flex"> Капуста
-                            белокочанна...
+                    <li class="list-name"> 
+                        <img class="list-big-img" src="img/list-big-img.png" alt="">
+                        <div class="list-need-flex"> 
+                            Капуста белокочанна...
                             <div class="list-name-date">02.06.24</div>
                         </div>
                     </li>
@@ -233,19 +229,24 @@
                         <div class="list-price">1 499 c</div>
                     </div>
                     <div class="list-discount">5%</div>
-                    <div class="list-season"><img class="list-birdie-img" src="img/list-birdie.png" alt=""></div>
+                    <div class="list-season">
+                        <img class="list-birdie-img" src="img/list-birdie.png" alt="">
+                    </div>
                     <div class="list-imgs">
-                        <button id="addManagerBtn--3"><img class="list-img" src="img/System icons.png" alt=""></button>
-                        <button><img class="list-img" src="img/Real World Icon.png" alt=""></button>
-                        <button><img class="list-img" src="img/Frame.png" alt=""></button>
+                        <button id="edit-product">
+                            <img class="list-img" src="img/System icons.png" alt="">
+                        </button>
+                        <button id="view-product">
+                            <img class="list-img" src="img/Real World Icon.png" alt="">
+                        </button>
+                        <button id="delete-product">
+                            <img class="list-img" src="img/Frame.png" alt="">
+                        </button>
                     </div>
                 </ol>
+
             </div>
         </div>
-
-
-
-
 
         <!-- Страница "Добавление товара" -->
         <div id="add-product" class="page-left">
@@ -276,8 +277,6 @@
                     </select>
                 </div>
 
-
-
                 <!-- Блок с чекбоксами -->
                 <div class="checkbox-group">
                     <label class="checkbox-label">
@@ -288,18 +287,6 @@
                         <input type="checkbox" name="seasonal" id="seasonal">
                         Сезонные товары
                     </label>
-                </div>
-                <div class="form-group">
-                    <label class="adding-root-page-text" for="subcategory">Подкатегория</label>
-                    <select id="subcategory" name="subcategory">
-                        <option value="">Выберите подкатегорию</option>
-                        <option value="dairy">Молочные продукты</option>
-                        <option value="vegetables">Овощи</option>
-                        <option value="fruits">Фрукты</option>
-                        <option value="bread">Хлеб</option>
-                        <option value="greens">Зелени</option>
-                        <option value="seafood">Морепродукты</option>
-                    </select>
                 </div>
                 <div class="form-group half-width">
                     <label class="adding-root-page-text" for="price">Цена</label>
@@ -329,32 +316,116 @@
             </form>
         </div>
 
-
-
-
-
-
-
-
-
         <!-- Страница "Заказы" -->
         <div id="regions" class="page-left">
-            <div class="head-right-page">
-                <button class="head-right-exit-btn">
-                    <p class="head-right-exit-text">Выход</p>
-                    <img class="head-right-exit-logo" src="img/exit.png" alt="">
-                </button>
-            </div>
-            <div class="right-page-block">
-                <h1 class="right-page-title">Текст</h1>
-                <div class="right-page-head">
-                    <div class="right-search-block">
-                        <p class="right-search-text">Поиск</p>
-                        <img class="right-search-img" src="img/search.png" alt="">
+            <div class="orders-container">
+                <div class="orders-header">
+                    <input type="text" placeholder="№ заказа" class="order-input">
+                    <div class="date-range">
+                        <input type="text" placeholder="12.12.12" class="date-input">
+                        <span>До</span>
+                        <input type="text" placeholder="12.12.12" class="date-input">
                     </div>
                 </div>
-
-                <!-- Остальной контент страницы "Заказы" -->
+                <div class="orders-filters">
+                    <button class="filter-btn active">Все</button>
+                    <button class="filter-btn">В обработке(2)</button>
+                    <button class="filter-btn">Принят</button>
+                    <button class="filter-btn">Завершен</button>
+                    <button class="filter-btn">Отклонен</button>
+                    <button class="filter-btn">Отменен</button>
+                    <div class="status-dropdown">
+                        <button class="status-btn">Статус: <span>Принять</span> <span class="arrow">▼</span></button>
+                    </div>
+                </div>
+                <div class="select-all-2">
+                    <input type="checkbox">
+                    <label>Отметить все</label>
+                </div>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Статус</th>
+                            <th>Дата</th>
+                            <th>№ заказа</th>
+                            <th>Регион</th>
+                            <th>Адрес</th>
+                            <th>На сумму</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="status-label in-process">В обработке</span></td>
+                            <td>01.12.24</td>
+                            <td>123245</td>
+                            <td>г.Бишкек</td>
+                            <td>Московская 55</td>
+                            <td>23 000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="status-label accepted">Принят</span></td>
+                            <td>01.12.24</td>
+                            <td>123245</td>
+                            <td>Нарынская область</td>
+                            <td>Московская 55</td>
+                            <td>23 000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="status-label completed">Завершен</span></td>
+                            <td>01.12.24</td>
+                            <td>123245</td>
+                            <td>г.Ош</td>
+                            <td>Московская 55</td>
+                            <td>23 000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="status-label rejected">Отклонен</span></td>
+                            <td>01.12.24</td>
+                            <td>123245</td>
+                            <td>Иссык-Куль область</td>
+                            <td>Московская 55</td>
+                            <td>23 000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="status-label cancelled">Отменен</span></td>
+                            <td>01.12.24</td>
+                            <td>123245</td>
+                            <td>г.Ош</td>
+                            <td>Московская 55</td>
+                            <td>23 000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer-pages-blocks">
+                    <div class="open-page-block">
+                        <p class="open-page-text">Перейти на страницу</p>
+                        <div class="open-page-minblock">0</div>
+                    </div>
+                    <div class="pages-blocks">
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer.png"
+                                alt=""></button>
+                        <button class="page-block">1</button>
+                        <button class="page-block">2</button>
+                        <button class="page-block">3</button>
+                        <button class="page-block">4</button>
+                        <button class="page-block">5</button>
+                        <button class="page-block">...</button>
+                        <button class="page-block">234</button>
+                        <button class="footer-arrow-btn"><img class="footer-arrow-img" src="img/arrow-footer-2.png"
+                                alt=""></button>
+                    </div>
+                    <div class="footer-show-block">
+                        <p class="show-text">Показать</p>
+                        <input type="number" min="0" max="34">
+                        <p class="show-number">из 34</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -364,8 +435,86 @@
         </div>
     </div>
 
+    <!-- Модальное окно "Создать скидку" -->
+    <div id="discount-modal" class="modal-window">
+        <div class="modal-box">
+            <h2 class="modal-title">Создать скидку</h2>
+            <form>
+                <div class="form-item">
+                    <label for="discount-size" class="input-label">Размер скидки</label>
+                    <input type="text" id="discount-size" name="discount-size" class="input-field" placeholder="0%">
+                </div>
+                <div class="form-item form-item-half">
+                    <label for="start-date" class="input-label">Дата начала</label>
+                    <input type="date" id="start-date" name="start-date" class="input-field">
+                </div>
+                <div class="form-item form-item-half">
+                    <label for="end-date" class="input-label">Дата окончания</label>
+                    <input type="date" id="end-date" name="end-date" class="input-field">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="button-cancel" onclick="closeDiscountModal()">Отменить</button>
+                    <button type="submit" class="button-save">Создать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Модальное окно "Добавить в категорию" -->
+<div id="category-modal" class="modal-window">
+    <div class="modal-box">
+        <h2 class="modal-title">Категории</h2>
+        <button class="close-category-btn">&times;</button>
+        <ul class="category-list">
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
+            <!-- Добавьте столько пунктов, сколько нужно -->
+        </ul>
+    </div>
+</div>
+
+
+
+<div id="categories-page" class="page-section">
+    <div class="categories-header-section">
+        <h1>Категории</h1>
+        <button id="create-category-button" class="button-create-category">Создать категорию</button>
+    </div>
+    <table class="table-categories">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Название</th>
+                <th>Дата создания</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Молочные продукты</td>
+                <td>14.11.2022</td>
+                <td>
+                    <button class="button-edit-category"><img src="img/edit-icon.png" alt="Редактировать"></button>
+                    <button class="button-view-category"><img src="img/view-icon.png" alt="Просмотр"></button>
+                    <button class="button-delete-category"><img src="img/delete-icon.png" alt="Удалить"></button>
+                </td>
+            </tr>
+            <!-- Добавьте другие строки категорий -->
+        </tbody>
+    </table>
+</div>
+
+
+
     <script src="scripts.js"></script>
-    <script src="registration.js"></script>
 </body>
 
 </html>
