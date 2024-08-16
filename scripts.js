@@ -55,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const addProductBtn = document.getElementById('addManagerBtn');
     const addProductPage = document.getElementById('add-product');
@@ -72,3 +70,68 @@ document.addEventListener('DOMContentLoaded', function() {
         managersPage.classList.add('active');
     }
 });
+
+
+document.getElementById('description').addEventListener('input', function () {
+    const maxLength = 2000;
+    const currentLength = this.value.length;
+    document.querySelector('.char-counter').textContent = `${currentLength} / ${maxLength}`;
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtn = document.querySelector('.right-filter-btn');
+    const filterSidebar = document.getElementById('filter-sidebar');
+    const closeFilterBtn = document.getElementById('close-filter-btn');
+
+    filterBtn.addEventListener('click', function() {
+        filterSidebar.classList.add('open');
+    });
+
+    closeFilterBtn.addEventListener('click', function() {
+        filterSidebar.classList.remove('open');
+    });
+
+    // Закрытие фильтра при клике вне окна
+    document.addEventListener('click', function(event) {
+        if (!filterSidebar.contains(event.target) && !filterBtn.contains(event.target)) {
+            filterSidebar.classList.remove('open');
+        }
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const discountBtn = document.querySelector('.discount-btn'); // Кнопка "Скидка"
+    const discountModal = document.getElementById('discount-modal');
+    const closeBtn = discountModal.querySelector('.button-cancel');
+
+    // Убедимся, что окно скрыто при загрузке страницы
+    discountModal.style.display = 'none';
+
+    discountBtn.addEventListener('click', function() {
+        discountModal.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        discountModal.style.display = 'none';
+    });
+
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target === discountModal) {
+            discountModal.style.display = 'none';
+        }
+    });
+});
+
+function closeDiscountModal() {
+    document.getElementById('discount-modal').style.display = 'none';
+}
+

@@ -328,7 +328,6 @@ body {
 }
 
 .markAll-text {
-    /* width: 93px; */
     margin-left: 2px;
     height: 19px;
     font-family: Manrope;
@@ -338,14 +337,13 @@ body {
     color: #787878;
 }
 
-.markAll-add-new-img{
+.markAll-add-new-img {
     width: 18px;
     height: 18px;
 }
 
 
 .markAll-btn {
-    width: 200px;
     height: 27px;
     border-radius: 2px 2px 2px 2px;
     background: #F4F4F4;
@@ -776,7 +774,8 @@ ol.lists-block li.list-name::before {
 .list-discount {
     color: red;
 }
-.markAll-bird{
+
+.markAll-bird {
     width: 13.5px;
     height: 13.5px;
 }
@@ -827,13 +826,393 @@ ol.lists-block li.list-name::before {
 
 
 
+#managers,
 #add-product {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     opacity: 0;
     transition: opacity 0.5s;
 }
 
+#managers.active,
 #add-product.active {
     display: block;
     opacity: 1;
+}
+
+
+#add-product {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.image-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #ccc;
+    border-radius: 50%;
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.image-label input {
+    display: none;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-group.half-width {
+    width: 48%;
+    display: inline-block;
+}
+
+.char-counter {
+    font-size: 12px;
+    color: #aaa;
+    text-align: right;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.cancel-btn,
+.save-btn {
+    width: 116px;
+    height: 35px;
+    padding: 8px 20px 8px 20px;
+    gap: 8px;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+}
+
+.cancel-btn {
+    width: 116px;
+    height: 35px;
+    padding: 8px 20px 8px 20px;
+    gap: 8px;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid #A6A6A6;
+    color: #A6A6A6;
+}
+
+.save-btn {
+    border: 1px solid #A6A6A6;
+    color: #A6A6A6;
+}
+
+.save-btn:hover {
+    color: white;
+    background: green;
+}
+
+.cancel-btn:hover {
+    color: white;
+    background: green;
+}
+
+.drag-and-drop-text {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.adding-root-page-text {
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: left;
+    color: #A6A6A6;
+}
+
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none; /* Убираем стандартный outline */
+    border-color: #C7C7CC; /* Меняем цвет рамки на более мягкий, например зелёный */
+    box-shadow: 0 0 5px #C7C7CC; /* Добавляем мягкую тень вокруг */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Плавный переход */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    border: 1px solid #ccc; /* Начальная рамка */
+    border-radius: 4px; /* Скругляем углы */
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Плавные переходы */
+}
+
+
+
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    appearance: none; /* Убираем стандартный стиль стрелки */
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-image: url('path/to/your/arrow-icon.png'); /* Добавляем иконку стрелки */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px; /* Размер иконки */
+}
+
+select:focus {
+    outline: none;
+    border-color: #C7C7CC; /* Зеленая рамка при фокусе */
+    box-shadow: 0 0 5px rgba(98, 175, 28, 0.5);
+}
+
+select option {
+    padding: 10px; /* Внутренние отступы для опций */
+    font-size: 14px;
+    color: #333;
+}
+
+select option:hover {
+    background-color: #f9f9f9; /* Светлый фон при наведении */
+}
+
+select option:checked {
+    background-color: gray; /* Зеленый фон для выбранной опции */
+    color: white;
+}
+.checkbox-group {
+    display: flex;
+    gap: 20px; /* Пространство между чекбоксами */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: green; /* Зеленый цвет текста */
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px; /* Отступ между чекбоксом и текстом */
+    width: 16px;
+    height: 16px;
+    accent-color: gray; /* Зеленый цвет чекбокса */
+}
+
+.checkbox-label input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 3px gray; /* Мягкая тень при фокусе */
+}
+
+
+/* Стили для бокового окна фильтра */
+.filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Начальное положение за пределами экрана */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease; /* Плавное появление */
+    z-index: 1000;
+    padding: 20px;
+}
+
+.filter-sidebar.open {
+    right: 0; /* Позиция, когда окно открыто */
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-filter-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-options li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.filter-options li:last-child {
+    border-bottom: none;
+}
+
+.filter-options li:hover {
+    color: green;
+    transition: color 0.2s ease;
+}
+
+
+
+
+/* Стили для модального окна "Создать скидку" */
+/* Стили для модального окна "Создать скидку" */
+.modal-window {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+.input-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-item-half {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-cancel,
+.button-save {
+    width: 116px;
+    height: 35px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #A6A6A6;
+    background-color: #f4f4f4;
+    color: #A6A6A6;
+    cursor: pointer;
+}
+
+.button-cancel:hover,
+.button-save:hover {
+    background-color: green;
+    color: white;
+    border-color: green;
+}
+
+.button-save {
+    background-color: #62AF1C;
+    color: white;
+    border: none;
+}
+
+.button-save:hover {
+    background-color: #4a8d14;
 }
