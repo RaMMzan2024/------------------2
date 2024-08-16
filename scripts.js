@@ -167,37 +167,86 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
-    const createCategoryButton = document.getElementById('create-category-button');
+    const pages = document.querySelectorAll('.page-section'); // Изменен класс на общий для всех страниц
+    const buttons = document.querySelectorAll('.sidebar-left button');
 
-    createCategoryButton.addEventListener('click', function() {
-        // Логика для создания новой категории
-        alert("Создание новой категории");
+    function resetActiveStates() {
+        buttons.forEach(button => button.classList.remove('active'));
+        pages.forEach(page => page.classList.remove('active'));
+    }
+
+    function setActivePage(pageId, buttonId) {
+        resetActiveStates();
+        document.getElementById(buttonId).classList.add('active');
+        document.getElementById(pageId).classList.add('active');
+    }
+
+    document.getElementById('managers-btn').addEventListener('click', function() {
+        setActivePage('managers', 'managers-btn');
     });
 
-    // Логика для редактирования, просмотра, удаления категории
-    document.querySelectorAll('.button-edit-category').forEach(button => {
-        button.addEventListener('click', function() {
-            alert("Редактирование категории");
-        });
+    document.getElementById('regions-btn').addEventListener('click', function() {
+        setActivePage('regions', 'regions-btn');
     });
 
-    document.querySelectorAll('.button-view-category').forEach(button => {
-        button.addEventListener('click', function() {
-            alert("Просмотр категории");
-        });
+    document.getElementById('new-section-btn').addEventListener('click', function() {
+        setActivePage('categories-page', 'new-section-btn'); // Изменен id на нужный для страницы "Категории"
     });
 
-    document.querySelectorAll('.button-delete-category').forEach(button => {
-        button.addEventListener('click', function() {
-            alert("Удаление категории");
-        });
-    });
-
-    // Логика переключения на страницу "Категории"
-    const categorySectionButton = document.getElementById('new-section-btn');
-    categorySectionButton.addEventListener('click', function() {
-        document.querySelectorAll('.page-section').forEach(page => page.classList.remove('active'));
-        document.getElementById('categories-page').classList.add('active');
-    });
+    // Активная страница по умолчанию
+    const activePage = localStorage.getItem('activePage') || 'managers';
+    const activeButton = localStorage.getItem('activeButton') || 'managers-btn';
+    setActivePage(activePage, activeButton);
 });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const pages = document.querySelectorAll('.page-section'); // Находит все страницы по классу
+    const buttons = document.querySelectorAll('.sidebar-left button'); // Находит все кнопки на боковой панели
+
+    function resetActiveStates() {
+        buttons.forEach(button => button.classList.remove('active')); // Сбрасывает активное состояние кнопок
+        pages.forEach(page => page.classList.remove('active')); // Скрывает все страницы
+    }
+
+    function setActivePage(pageId, buttonId) {
+        resetActiveStates();
+        document.getElementById(buttonId).classList.add('active'); // Делает кнопку активной
+        document.getElementById(pageId).classList.add('active'); // Отображает нужную страницу
+        localStorage.setItem('activePage', pageId);
+        localStorage.setItem('activeButton', buttonId);
+    }
+
+    document.getElementById('managers-btn').addEventListener('click', function() {
+        setActivePage('managers', 'managers-btn');
+    });
+
+    document.getElementById('regions-btn').addEventListener('click', function() {
+        setActivePage('regions', 'regions-btn');
+    });
+
+    document.getElementById('new-section-btn').addEventListener('click', function() {
+        setActivePage('categories-page', 'new-section-btn');
+    });
+
+    // Активная страница по умолчанию
+    const activePage = localStorage.getItem('activePage') || 'managers';
+    const activeButton = localStorage.getItem('activeButton') || 'managers-btn';
+    setActivePage(activePage, activeButton);
+});
+
