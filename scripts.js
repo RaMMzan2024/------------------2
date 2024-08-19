@@ -383,4 +383,78 @@ function openModal() {
     const subcategoryDiv = button.parentElement;
     subcategoryDiv.remove();
   }
+
   
+
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('warning-popup');
+    const openPopupBtns = document.querySelectorAll('.icon-btn.icon-remove');
+    const closePopupBtn = document.querySelector('.btn-close-popup');
+
+    openPopupBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            popup.classList.remove('hidden-popup');
+        });
+    });
+
+    closePopupBtn.addEventListener('click', function() {
+        popup.classList.add('hidden-popup');
+    });
+
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.classList.add('hidden-popup');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const listItems = document.querySelectorAll('.lists-block');
+    const fullPageDetails = document.getElementById('full-page-details');
+    const closeFullPageDetailsBtn = document.getElementById('close-full-page-details');
+
+    listItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Заполнение информации о продукте
+            const title = this.querySelector('.list-name').textContent.trim();
+            const date = this.querySelector('.list-name-date').textContent.trim();
+            const category = this.querySelector('.list-category').textContent.trim();
+            const price = this.querySelector('.list-price').textContent.trim();
+            const discount = this.querySelector('.list-discount').textContent.trim();
+
+            // Динамическое заполнение деталей продукта
+            document.getElementById('product-title').textContent = title;
+            document.getElementById('product-date').textContent = date;
+            document.getElementById('product-category').textContent = category;
+            document.getElementById('product-price').textContent = price;
+            document.getElementById('product-discount').textContent = discount;
+
+            // Показываем секцию с деталями на всю страницу справа
+            fullPageDetails.classList.remove('hidden-details');
+        });
+    });
+
+    // Закрытие секции с деталями
+    closeFullPageDetailsBtn.addEventListener('click', function() {
+        fullPageDetails.classList.add('hidden-details');
+    });
+});

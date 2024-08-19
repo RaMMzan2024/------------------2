@@ -1873,6 +1873,132 @@ select option:checked {
 
 
 
+/* Стили для модального окна */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    width: 340px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hidden-popup {
+    display: none;
+}
+
+.popup-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.popup-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.btn-close-popup {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-close-popup:hover{
+    color: white;
+    background: green;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden-details {
+    display: none;
+}
+
+.full-page-details {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px; /* Ширина правой панели */
+    height: 100vh; /* 100% высоты окна просмотра */
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000; /* Положение на переднем плане */
+}
+
+.close-full-page-details {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.full-page-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.full-page-details p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.product-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.btn-edit-product {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 
 
 
