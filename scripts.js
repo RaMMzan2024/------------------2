@@ -434,27 +434,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     listItems.forEach(item => {
         item.addEventListener('click', function() {
-            // Заполнение информации о продукте
+            // Обновление содержимого
             const title = this.querySelector('.list-name').textContent.trim();
             const date = this.querySelector('.list-name-date').textContent.trim();
             const category = this.querySelector('.list-category').textContent.trim();
             const price = this.querySelector('.list-price').textContent.trim();
             const discount = this.querySelector('.list-discount').textContent.trim();
 
-            // Динамическое заполнение деталей продукта
             document.getElementById('product-title').textContent = title;
             document.getElementById('product-date').textContent = date;
             document.getElementById('product-category').textContent = category;
             document.getElementById('product-price').textContent = price;
             document.getElementById('product-discount').textContent = discount;
 
-            // Показываем секцию с деталями на всю страницу справа
-            fullPageDetails.classList.remove('hidden-details');
+            // Показываем панель с деталями
+            fullPageDetails.classList.add('active');
         });
     });
 
-    // Закрытие секции с деталями
     closeFullPageDetailsBtn.addEventListener('click', function() {
-        fullPageDetails.classList.add('hidden-details');
+        fullPageDetails.classList.remove('active');
+    });
+
+    // Добавляем логику для закрытия панели при переключении на другую страницу
+    const pageButtons = document.querySelectorAll('.sidebar-left button');
+
+    pageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            fullPageDetails.classList.remove('active');
+        });
     });
 });
