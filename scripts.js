@@ -250,3 +250,137 @@ document.addEventListener('DOMContentLoaded', function() {
     setActivePage(activePage, activeButton);
 });
 
+
+
+
+
+document.querySelector('.status-btn').addEventListener('click', function() {
+    document.querySelector('.status-dropdown').classList.toggle('show');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.status-btn')) {
+        var dropdowns = document.getElementsByClassName("status-dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const expandButtons = document.querySelectorAll('.btn-expand');
+
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const parentRow = this.closest('tr');
+            let nextRow = parentRow.nextElementSibling;
+
+            while (nextRow && nextRow.classList.contains('subcategory-row')) {
+                nextRow.classList.toggle('hidden-row');
+                nextRow = nextRow.nextElementSibling;
+            }
+
+            this.textContent = this.textContent === '▼' ? '▲' : '▼';
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('popup-category');
+    const openModalBtn = document.querySelector('.btn-new-category');
+    const closeModalBtns = document.querySelectorAll('.btn-cancel-action, .btn-confirm-action');
+
+    openModalBtn.addEventListener('click', function() {
+        modal.classList.remove('hidden-popup');
+    });
+
+    closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            modal.classList.add('hidden-popup');
+        });
+    });
+
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.classList.add('hidden-popup');
+        }
+    });
+});
+
+
+
+
+
+
+
+function openModal() {
+    document.getElementById("modal-subcat").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("modal-subcat").style.display = "none";
+  }
+  
+  let subcategoryCount = 2;
+  
+  function addSubcategory() {
+    subcategoryCount++;
+    const container = document.querySelector('.modal-content');
+    
+    const newSubcategory = document.createElement('div');
+    newSubcategory.classList.add('subcategory-input');
+    
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Новая подкатегория';
+    input.id = `subcategory-${subcategoryCount}`;
+    
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-subcat-btn');
+    removeBtn.innerHTML = '🗑️';
+    removeBtn.onclick = function() { removeSubcategory(removeBtn); };
+    
+    newSubcategory.appendChild(input);
+    newSubcategory.appendChild(removeBtn);
+    
+    container.insertBefore(newSubcategory, document.querySelector('.btn-add-subcat-in-modal'));
+  }
+  
+  function removeSubcategory(button) {
+    const subcategoryDiv = button.parentElement;
+    subcategoryDiv.remove();
+  }
+  

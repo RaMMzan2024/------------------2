@@ -188,6 +188,7 @@ body {
 
 .head-right-exit-btn {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .right-page-block {
@@ -202,7 +203,6 @@ body {
 .right-page-title {
     width: 54px;
     height: 27px;
-    margin-top: 16px;
     font-family: Manrope;
     font-size: 20px;
     font-weight: 500;
@@ -1325,7 +1325,7 @@ select option:checked {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
     background-color: #f8f9fa;
-    color: #198754;
+    color: #787878;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1351,10 +1351,16 @@ select option:checked {
 .status-btn {
     padding: 10px 15px;
     border-radius: 5px;
-    border: 1px solid #62AF1C;
+    border: 1px solid grey;
     background-color: white;
-    color: #62AF1C;
+    color: #787878;
     cursor: pointer;
+}
+
+.status-btn:hover {
+    color: green;
+    border: 1px solid green;
+    transition: 0.2s;
 }
 
 .orders-table {
@@ -1502,6 +1508,7 @@ select option:checked {
 }
 
 
+
 /* Стили для заголовка и кнопки */
 .categories-header-section {
     display: flex;
@@ -1535,7 +1542,8 @@ select option:checked {
     margin-top: 20px;
 }
 
-.table-categories th, .table-categories td {
+.table-categories th,
+.table-categories td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #E0E0E0;
@@ -1552,19 +1560,25 @@ select option:checked {
 }
 
 /* Стили для кнопок действий */
-.button-edit-category, .button-view-category, .button-delete-category {
+.button-edit-category,
+.button-view-category,
+.button-delete-category {
     background: none;
     border: none;
     cursor: pointer;
     margin-right: 5px;
 }
 
-.button-edit-category img, .button-view-category img, .button-delete-category img {
+.button-edit-category img,
+.button-view-category img,
+.button-delete-category img {
     width: 16px;
     height: 16px;
 }
 
-.button-edit-category:hover img, .button-view-category:hover img, .button-delete-category:hover img {
+.button-edit-category:hover img,
+.button-view-category:hover img,
+.button-delete-category:hover img {
     opacity: 0.7;
 }
 
@@ -1581,3 +1595,287 @@ select option:checked {
     display: block;
     opacity: 1;
 }
+
+
+
+
+
+
+.status-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.status-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.status-dropdown.show .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page-section {
+    width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    font-size: 24px;
+    color: #333;
+}
+
+.btn-new-category {
+    width: 185px;
+    height: 34px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px 1px 1px 1px;
+    border: 1px solid #C7C7CC
+}
+
+.btn-new-category:hover {
+    background-color: #218838;
+    color: white;
+    transition: 0.3s;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.col-heading {
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+}
+
+.col-data {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    height: 55px;
+}
+
+
+
+.btn-expand {
+    margin-right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.action-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon-btn {
+    font-size: 16px;
+    color: #444;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden-row {
+    display: none;
+}
+
+
+
+/* Стили для модального окна */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.hidden-popup {
+    display: none;
+}
+
+.popup-header {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #444;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #777;
+}
+
+.text-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.subcat-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 600px;
+}
+
+.btn-remove-subcat {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-add-subcat {
+    color: Green;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-cancel-action {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancel-action:hover {
+    color: white;
+    background: green;
+    transition: 0.2s;
+}
+
+.btn-confirm-action {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-confirm-action:hover {
+    color: white;
+    background: green;
+    transition: 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+

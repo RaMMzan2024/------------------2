@@ -326,18 +326,19 @@
                         <span>До</span>
                         <input type="text" placeholder="12.12.12" class="date-input">
                     </div>
-                </div>
-                <div class="orders-filters">
-                    <button class="filter-btn active">Все</button>
-                    <button class="filter-btn">В обработке(2)</button>
-                    <button class="filter-btn">Принят</button>
-                    <button class="filter-btn">Завершен</button>
-                    <button class="filter-btn">Отклонен</button>
-                    <button class="filter-btn">Отменен</button>
                     <div class="status-dropdown">
                         <button class="status-btn">Статус: <span>Принять</span> <span class="arrow">▼</span></button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">В обработке</li>
+                            <li class="dropdown-item">Принять</li>
+                            <li class="dropdown-item">Завершить</li>
+                            <li class="dropdown-item">Отменить</li>
+                            <li class="dropdown-item">Отклонить</li>
+                        </ul>
                     </div>
                 </div>
+                
+
                 <div class="select-all-2">
                     <input type="checkbox">
                     <label>Отметить все</label>
@@ -431,7 +432,6 @@
 
         <!-- Пример нового раздела -->
         <div id="new-section" class="page-left">
-            <h1>Hello World</h1>
         </div>
     </div>
 
@@ -462,7 +462,7 @@
 
 
 
-    <!-- Модальное окно "Добавить в категорию" -->
+<!-- Модальное окно "Добавить в категорию" -->
 <div id="category-modal" class="modal-window">
     <div class="modal-box">
         <h2 class="modal-title">Категории</h2>
@@ -474,44 +474,217 @@
             <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
             <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
             <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
-            <li><input type="checkbox"> Молочные продукты <span>&gt;</span></li>
-            <!-- Добавьте столько пунктов, сколько нужно -->
         </ul>
     </div>
 </div>
 
 
 
+
 <div id="categories-page" class="page-section">
-    <div class="categories-header-section">
-        <h1>Категории</h1>
-        <button id="create-category-button" class="button-create-category">Создать категорию</button>
-    </div>
-    <table class="table-categories">
+    <button class="head-right-exit-btn">
+        <p class="head-right-exit-text">Выход</p>
+        <img class="head-right-exit-logo" src="img/exit.png" alt="">
+    </button>
+    <header class="top-bar">
+        <h1 class="section-heading">Категории</h1>
+        <button class="btn-new-category">Создать категорию</button>
+    </header>
+
+    <table class="data-table">
         <thead>
             <tr>
-                <th>№</th>
-                <th>Название</th>
-                <th>Дата создания</th>
-                <th>Действия</th>
+                <th class="col-heading">№</th>
+                <th class="col-heading">Название</th>
+                <th class="col-heading">Дата создания</th>
+                <th class="col-heading">Действия</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Молочные продукты</td>
-                <td>14.11.2022</td>
-                <td>
-                    <button class="button-edit-category"><img src="img/edit-icon.png" alt="Редактировать"></button>
-                    <button class="button-view-category"><img src="img/view-icon.png" alt="Просмотр"></button>
-                    <button class="button-delete-category"><img src="img/delete-icon.png" alt="Удалить"></button>
+            <tr class="main-category-row">
+                <td class="col-data">1</td>
+                <td class="col-data category-title">
+                    <button class="btn-expand">▼</button> Молочные продукты
+                </td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-edit">✏️</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                    <button class="icon-btn icon-view">👁️</button>
                 </td>
             </tr>
-            <!-- Добавьте другие строки категорий -->
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Сыр</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Сметана</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Айран</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Творог</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+
+
+
+            <tr class="main-category-row">
+                <td class="col-data">1</td>
+                <td class="col-data category-title">
+                    <button class="btn-expand">▼</button> Молочные продукты
+                </td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-edit">✏️</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                    <button class="icon-btn icon-view">👁️</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Ряженка</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Кефир</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+
+
+
+
+
+
+            <tr class="main-category-row">
+                <td class="col-data">1</td>
+                <td class="col-data category-title">
+                    <button class="btn-expand">▼</button> Молочные продукты
+                </td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-edit">✏️</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                    <button class="icon-btn icon-view">👁️</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Сыр</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <tr class="subcategory-row hidden-row">
+                <td class="col-data"></td>
+                <td class="col-data subcategory-title">Творог</td>
+                <td class="col-data">14.11.2022</td>
+                <td class="col-data action-icons">
+                    <button class="icon-btn icon-add">➕</button>
+                    <button class="icon-btn icon-remove">🗑</button>
+                </td>
+            </tr>
+            <!-- Добавьте больше категорий и подкатегорий по аналогии -->
         </tbody>
     </table>
 </div>
 
+
+<div id="popup-category" class="overlay hidden-popup">
+    <div class="popup-box">
+        <h2 class="popup-header"> Добавить категорию</h2>
+        <form>
+            <div class="input-group">
+                <label for="category-name">Название категории</label>
+                <input type="text" id="category-name" class="text-input" placeholder="Введите название">
+            </div>
+            <div class="input-group">
+                <label>Подкатегории</label>
+                <div class="subcat-container">
+                    <input type="text" class="text-input" placeholder="Подкатегория 1">
+                    <button><img class="icon-btn" src="img/Frame.png" alt="">  </button>
+                </div>
+                <div class="subcat-container">
+                    <input type="text" class="text-input" placeholder="Подкатегория 2">
+                    <button><img class="icon-btn" src="img/Frame.png" alt=""></button>
+                </div>
+            </div>
+            <button type="button" class="btn-add-subcat" onclick="openModal()">+ Добавить подкатегорию</button>
+            <div class="form-footer">
+                <button type="button" class="btn-cancel-action">Отмена</button>
+                <button type="submit" class="btn-confirm-action">Добавить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Modal structure -->
+<div id="modal-subcat" class="modal">
+    <div class="popup-box">
+        <h2 class="popup-header"> Добавить категорию</h2>
+        <form>
+            <div class="input-group">
+                <label for="category-name">Название категории</label>
+                <input type="text" id="category-name" class="text-input" placeholder="Введите название">
+            </div>
+            <div class="input-group">
+                <label>Подкатегории</label>
+                <div class="subcat-container">
+                    <input type="text" class="text-input" placeholder="Подкатегория 1">
+                    <button><img class="icon-btn" src="img/Frame.png" alt="">  </button>
+                </div>
+                <div class="subcat-container">
+                    <input type="text" class="text-input" placeholder="Подкатегория 2">
+                    <button><img class="icon-btn" src="img/Frame.png" alt=""></button>
+                </div>
+            </div>
+            <button type="button" class="btn-add-subcat" onclick="openModal()">+ Добавить подкатегорию</button>
+            <div class="form-footer">
+                <button type="button" class="btn-cancel-action">Отмена</button>
+                <button type="submit" class="btn-confirm-action">Добавить</button>
+            </div>
+        </form>
+    </div>
+  </div>
 
 
     <script src="scripts.js"></script>
