@@ -164,6 +164,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryModal = document.getElementById('category-modal');
+    
+    // Проверка состояния в localStorage (если это используется)
+    const isModalOpen = localStorage.getItem('isModalOpen');
+
+    if (isModalOpen !== 'true') {
+        categoryModal.style.display = 'none';
+    } else {
+        categoryModal.style.display = 'flex';
+    }
+
+    // Логика для открытия/закрытия окна
+    // Не забудьте обновить состояние в localStorage
+});
 
 
 
